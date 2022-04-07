@@ -30,7 +30,7 @@ class UpdateSummaryScreen(
         height = RelativeConstraint()
     } childOf contentContainer
 
-    val headerText = UIText("Attempted to update your mods.\nUpdated mods will load upon restart.").constrain {
+    val headerText = UIText("Attempted to update your mods. Updated mods will load upon restart.").constrain {
         x = CenterConstraint()
         y = CenterConstraint()
     }.setTextScale(1.25f.pixels()) childOf headerContainer
@@ -75,19 +75,20 @@ class UpdateSummaryScreen(
         height = ChildBasedSizeConstraint()
     } childOf footerContainer
     private val quitButton = SexyButton(
-        text = "Quit",
+        text = "Quit MC",
         outlineColor = Color.RED,
         primary = false
     ).constrain {
-        width = 50.pixels()
+        width = 150.pixels()
         height = 20.pixels()
     }.onMouseClick {
         FMLCommonHandler.instance().exitJava(0, false)
     } childOf buttonContainer
     private val continueButton = SexyButton(
-        text = "Continue to MC"
+        text = "Continue to Main Menu",
+        primary = false
     ).constrain {
-        x = SiblingConstraint()
+        x = SiblingConstraint(7f)
         width = 150.pixels()
         height = 20.pixels()
     }.onMouseClick {
